@@ -1,5 +1,11 @@
 class Solution {
+
 public:
+    Solution() {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+    }
     int maxOperations(vector<int>& arr, int k) {
         map<int, int> mp;
         int count = 0;
