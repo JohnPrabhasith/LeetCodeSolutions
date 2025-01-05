@@ -5,13 +5,10 @@ public:
         int maxProfit = 0;
 
         for(int i=0; i<arr.size(); i++) {
-            if(minVal > arr[i]) {
-                minVal = arr[i];
-            }
 
-            if(arr[i] - minVal > maxProfit) {
-                maxProfit = arr[i] - minVal;
-            }
+            minVal = min(minVal, arr[i]);
+            maxProfit = max(maxProfit, arr[i]-minVal);
+            
         }
         return maxProfit;
     }
