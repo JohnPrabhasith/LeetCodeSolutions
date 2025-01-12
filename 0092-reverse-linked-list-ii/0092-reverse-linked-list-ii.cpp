@@ -11,28 +11,26 @@
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
-if (!head || left == right) return head; // Edge case
+if (!head || left == right) return head; 
 
-    ListNode dummy(0); // Dummy node to simplify edge cases
+    ListNode dummy(0); 
     dummy.next = head;
     ListNode* prev = &dummy;
 
-    // Step 1: Move `prev` to the node just before the `left` position
     for (int i = 1; i < left; ++i) {
         prev = prev->next;
     }
 
-    // Step 2: Reverse the sublist
-    ListNode* curr = prev->next; // First node to be reversed
+    ListNode* curr = prev->next; 
     ListNode* next = nullptr;
 
     for (int i = 0; i < right - left; ++i) {
-        next = curr->next; // Store next node
-        curr->next = next->next; // Reverse the link
-        next->next = prev->next; // Insert `next` at the beginning of the reversed section
-        prev->next = next; // Move `prev`'s next to `next`
+        next = curr->next;
+        curr->next = next->next;
+        next->next = prev->next;
+        prev->next = next; 
     }
 
-    return dummy.next; // Return the new head of the list
+    return dummy.next; 
     }
 };
