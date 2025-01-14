@@ -10,19 +10,19 @@
  * };
  */
 class Solution {
-public:
-
-    TreeNode* solve(vector<int> nums, int left, int right) {
+private:
+    TreeNode* sortedArrayToBST(vector<int> nums, int left, int right) {
         if(left > right) return nullptr;
         int mid = (left + right) / 2;
         TreeNode* tree = new TreeNode(nums[mid]);
         tree->val = nums[mid];
-        tree->left = solve(nums, left, mid-1);
-        tree->right = solve(nums, mid+1, right);
+        tree->left = sortedArrayToBST(nums, left, mid-1);
+        tree->right = sortedArrayToBST(nums, mid+1, right);
         return tree;
     }
+public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
         int n = nums.size();
-        return solve(nums, 0, n-1);
+        return sortedArrayToBST(nums, 0, n-1);
     }
 };
