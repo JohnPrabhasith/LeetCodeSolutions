@@ -1,5 +1,11 @@
 class Solution:
     def fib(self, n: int) -> int:
-        if n == 1 or n == 0:
-            return n
-        return self.fib(n-1) + self.fib(n-2)
+        x = 0
+        y = 1
+
+        for i in range(n-1):
+            temp = x
+            x = y
+            y = temp + y
+        return y
+            
