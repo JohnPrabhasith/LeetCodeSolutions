@@ -3,11 +3,8 @@ class Solution:
         pq = []
 
         for i in range(len(nums)):
-            heapq.heappush(pq, -nums[i])
-        
-        f = k-1
+            heapq.heappush(pq, nums[i])
+            if(len(pq) > k):
+                heapq.heappop(pq)
 
-        while(f > 0):
-            heapq.heappop(pq)
-            f -= 1
-        return -pq[0]
+        return pq[0]
