@@ -15,7 +15,7 @@ public:
         int have = 0;
 
         int l = 0,r = 0;
-        int sIndex, eIndex;
+        int sIndex;
         int minCount = INT_MAX;
 
         while(r < m) {
@@ -27,7 +27,6 @@ public:
             while(need == have) {
                 if(minCount > (r-l+1)){
                     sIndex = l;
-                    eIndex = r;
                     minCount = r-l+1;
                 }
                 window[s[l]]--;
