@@ -8,13 +8,14 @@ public:
         }
 
         vector<int> res;
-        int start = 0;
+        int size = 0;
         int end = 0;
         for(int i=0; i<n; i++) {
             end = max(end, mp[s[i]]);
+            size++;
             if(i == end) {
-                res.push_back(end - start + 1);
-                start = i + 1;
+                res.push_back(size);
+                size = 0;
             }
         }
         return res;
