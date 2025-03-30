@@ -14,6 +14,7 @@ public:
             end = max(end, mp[s[i]]);
             if(i == end) {
                 res.push_back(end - start + 1);
+                start = i + 1;
             }
         }
         return res;
