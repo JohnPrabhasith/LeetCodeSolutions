@@ -7,8 +7,8 @@ public:
     vector<vector<int>> merge(vector<vector<int>>& nums) {
         int n = nums.size();
         vector<vector<int>> ans;
-        sort(nums.begin(), nums.end(), HelperSort);
-        int i = 0;
+        sort(nums.begin(), nums.end());
+        // int i = 0;
         // while(i<n) {
         //     if(i+1 < n && nums[i][1] >= nums[i+1][0]) {
         //         res.push_back({nums[i][0], max(nums[i][1], nums[i+1][1])});i+=1;
