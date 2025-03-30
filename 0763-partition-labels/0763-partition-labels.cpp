@@ -7,18 +7,15 @@ public:
             mp[s[i]] = i;
         }
 
-        int size = 0;
-        int end = 0;
         vector<int> res;
-        int i =0;
-
-        while(i < n) {
-            end = max(mp[s[i]], end);
+        int start = 0;
+        int end = 0;
+        for(int i=0; i<n; i++) {
+            end = max(end, mp[s[i]]);
             if(i == end) {
-                res.push_back(end - size + 1);
-                size = i+1;
+                res.push_back(end - start + 1);
+                start = i + 1;
             }
-            i++;
         }
         return res;
     }
