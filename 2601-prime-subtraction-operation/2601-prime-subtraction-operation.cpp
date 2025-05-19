@@ -29,7 +29,7 @@ private:
             if(((curr - midElement) > prec) and ((curr - midElement) > next)) {
                 return midElement;
             }
-            else if( (curr - midElement)<=prec){
+            else if((curr - midElement)<=prec){
                 r = mid-1;
             }
             else{
@@ -45,7 +45,7 @@ public:
         int m = *max_element(arr.begin(), arr.end());
 
         vector<int> prime = GeneratePrimes(m);
-
+       
         for(int i=n-2; i>=0; i--) {
             if(arr[i] < arr[i+1]) continue;
             auto it = upper_bound(prime.begin(), prime.end(), arr[i]-arr[i+1]);
