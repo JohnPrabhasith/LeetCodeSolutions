@@ -9,13 +9,14 @@ private:
         // if(n < 0) return 0;
         // if(dp[n] != -1) return dp[n];
         // return dp[n] = max(rob(nums, dp, n-2) + nums[n], rob(nums, dp, n-1));
-        dp[0] = 0;
-        dp[1] = nums[0];
+        int a = 0;
+        int b = nums[0];
 
         for(int i=1; i<n; i++) {
-            int val = nums[i];
-            dp[i+1] = max(dp[i], dp[i-1] + val);
+            int val = a;
+            a = b;
+            b = max(val + nums[i], a);
         }
-        return dp[n];
+        return b;
     }
 };
