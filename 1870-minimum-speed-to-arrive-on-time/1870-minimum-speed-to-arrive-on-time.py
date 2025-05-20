@@ -1,8 +1,6 @@
 class Solution:
     def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
         n: int = len(dist)
-        if hour < n-1:
-            return -1
 
         def isValid(val):
             ans = 0
