@@ -2,14 +2,11 @@ class Solution:
     def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
         n: int = len(dist)
 
-        def isValid(val):
+        def isValid(speed):
             ans = 0
-            for i in range(n):
-                ans += dist[i]/val
-                if i < n-1:
-                    ans = ceil(ans)
-                if ans > hour:
-                    return False
+            for dst in dist[:-1]:
+                ans += ceil(dst/speed)
+            ans += dist[-1]/speed
             return ans <= hour
 
         l = 1
