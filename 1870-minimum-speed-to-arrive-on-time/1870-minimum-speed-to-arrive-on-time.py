@@ -4,10 +4,10 @@ class Solution:
         if hour < n-1:
             return -1
 
-        def isValid(val) -> bool:
-            ans: float = 0
+        def isValid(val):
+            ans = 0
             for i in range(n):
-                ans += float(dist[i])/val
+                ans += dist[i]/val
                 if i < n-1:
                     ans = ceil(ans)
                 if ans > hour:
@@ -15,12 +15,10 @@ class Solution:
             return ans <= hour
 
         l = 1
-        r = int(1e7)
+        r = 10**7
         while(l <= r):
             mid = (l+r)//2
-            ans = isValid(mid)
-            # if(ans == hour):
-            if ans:
+            if isValid(mid):
                 r = mid - 1
             else:
                 l = mid + 1
