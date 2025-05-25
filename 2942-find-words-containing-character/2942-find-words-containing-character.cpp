@@ -2,13 +2,10 @@ class Solution {
 public:
     vector<int> findWordsContaining(vector<string>& arr, char x) {
         vector<int> ans;
-        int n = arr.size();
 
-        for(int i=0; i<n; i++) {
-            string word = arr[i];
-            int m = word.size();
-            for(int j=0; j<m; j++) {
-                if (word[j] == x){
+        for(int i=0; i<arr.size(); i++) {
+            for(int j=0; j<arr[i].size(); j++) {
+                if (arr[i][j] == x){
                     ans.push_back(i);
                     break;
                 }
