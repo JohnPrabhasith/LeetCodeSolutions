@@ -6,6 +6,9 @@ class Solution:
         maxCount = 0
         countAdjPairs = 0
 
+        if n < 2:
+            return n
+
         while r < n:
             
             if r > 0 and s[r] == s[r-1]:
