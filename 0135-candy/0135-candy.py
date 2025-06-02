@@ -12,9 +12,6 @@ class Solution:
             if (arr[i] > arr[i+1]):
                 ans[i] = max(ans[i], ans[i+1]+1)
         
-        count = 0
-        for i in range(n):
-            count += ans[i]
     
-        return count
+        return sum(ans)
             
